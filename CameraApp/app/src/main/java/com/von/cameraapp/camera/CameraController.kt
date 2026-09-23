@@ -78,6 +78,7 @@ class CameraController(
             frameHeight = size.height
             openCamera(id, size, preview)
         } catch (e: Exception) {
+            Log.w(TAG, "open exception: ${e.message}")
             listener.onError("打开摄像头异常: ${e.message}")
         }
     }
@@ -99,6 +100,7 @@ class CameraController(
             }
 
             override fun onError(device: CameraDevice, error: Int) {
+                Log.w(TAG, "openCamera failed, error=$error")
                 listener.onError("打开摄像头失败，错误码 $error")
             }
         }, handler)
@@ -143,11 +145,13 @@ class CameraController(
                     s.setRepeatingRequest(b.build(), null, handler)
                     listener.onOpened(facing, rotation, size.width, size.height)
                 } catch (e: Exception) {
+                    Log.w(TAG, "setRepeatingRequest failed: ${e.message}")
                     listener.onError("启动采集失败: ${e.message}")
                 }
             }
 
             override fun onConfigureFailed(s: CameraCaptureSession) {
+                Log.w(TAG, "session configure failed")
                 // 预览+YUV 组合可能超出设备能力，降级为仅 YUV 采集
                 if (!retryWithoutPreview && preview != null) {
                     retryWithoutPreview = true

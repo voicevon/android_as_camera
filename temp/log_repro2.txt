@@ -1,0 +1,37 @@
+--------- beginning of main
+09-22 16:17:07.375 I/CameraStreamService(17165): mqtt command: stop_stream {"action":"stop_stream"}
+09-22 16:17:07.377 I/CameraStreamService(17165): stream stopped
+09-22 16:17:16.573 I/CameraStreamService(17165): mqtt command: start_stream {"action":"start_stream"}
+09-22 16:17:16.596 I/RtspServer(17165): RTSP server listening on 8554
+09-22 16:21:08.114 I/CameraStreamService(17166): service created, deviceId=07d2004b8e943543
+09-22 16:21:08.130 I/CameraStreamService(17166): service destroyed
+09-22 16:21:08.264 W/MqttControl(17166): mqtt connect failed: MqttException
+09-22 16:21:29.394 I/CameraStreamService(17166): service created, deviceId=07d2004b8e943543
+09-22 16:21:29.411 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:21:29.734 I/MqttControl(17166): mqtt connected: tcp://voicevon.vicp.io:1883
+09-22 16:21:34.428 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:21:39.446 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:21:59.605 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:22:04.646 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:22:09.666 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:22:19.743 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:22:24.781 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:22:29.822 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:22:54.998 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:23:00.023 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:23:05.047 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:23:10.700 I/CameraStreamService(17166): mqtt command: stop_stream {"action":"stop_stream"}
+09-22 16:23:10.702 I/CameraStreamService(17166): stream stopped
+09-22 16:23:15.131 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:23:20.149 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:23:21.017 I/CameraStreamService(17166): mqtt command: start_stream {"action":"start_stream"}
+09-22 16:23:21.040 I/RtspServer(17166): RTSP server listening on 8554
+09-22 16:23:21.311 I/CameraStreamService(17166): camera opened: 720x1280 rotation=270
+09-22 16:23:25.226 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:23:42.705 I/CameraStreamService(17166): camera opened: 720x1280 rotation=270
+09-22 16:23:50.362 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:23:55.365 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:24:00.370 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:24:05.373 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:24:10.377 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:24:30.402 W/MqttControl(17166): publish failed: 客户机未连接

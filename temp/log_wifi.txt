@@ -1,0 +1,48 @@
+--------- beginning of main
+09-22 16:29:37.534 I/CameraStreamService(17166): camera opened: 720x1280 rotation=90
+09-22 16:29:39.202 I/RtspServer(17166): connection closed
+09-22 16:29:44.840 I/CameraStreamService(17166): mqtt command: switch_camera {"action":"switch_camera","camera":"front"}
+09-22 16:29:45.898 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:29:47.822 I/CameraStreamService(17166): mqtt command: switch_camera {"action":"switch_camera","camera":"front"}
+09-22 16:29:49.293 I/CameraStreamService(17166): mqtt command: switch_camera {"action":"switch_camera","camera":"front"}
+09-22 16:29:49.580 I/CameraStreamService(17166): camera opened: 720x1280 rotation=270
+09-22 16:29:50.375 I/CameraStreamService(17166): mqtt command: switch_camera {"action":"switch_camera","camera":"front"}
+09-22 16:29:50.901 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:29:52.419 I/CameraStreamService(17166): mqtt command: switch_camera {"action":"switch_camera","camera":"back"}
+09-22 16:29:52.428 W/H264Encoder(17166): offerFrame
+09-22 16:29:52.428 W/H264Encoder(17166): java.lang.IllegalStateException
+09-22 16:29:52.428 W/H264Encoder(17166): 	at android.media.MediaCodec.getBuffer(Native Method)
+09-22 16:29:52.428 W/H264Encoder(17166): 	at android.media.MediaCodec.getInputBuffer(MediaCodec.java:4001)
+09-22 16:29:52.428 W/H264Encoder(17166): 	at com.von.cameraapp.codec.H264Encoder.offerFrame(H264Encoder.kt:121)
+09-22 16:29:52.428 W/H264Encoder(17166): 	at com.von.cameraapp.service.CameraStreamService.dispatchFrame(CameraStreamService.kt:374)
+09-22 16:29:52.428 W/H264Encoder(17166): 	at com.von.cameraapp.service.CameraStreamService.access$dispatchFrame(CameraStreamService.kt:41)
+09-22 16:29:52.428 W/H264Encoder(17166): 	at com.von.cameraapp.service.CameraStreamService$frameListener$1.onFrame(CameraStreamService.kt:311)
+09-22 16:29:52.428 W/H264Encoder(17166): 	at com.von.cameraapp.camera.CameraController.createSession$lambda$1(CameraController.kt:119)
+09-22 16:29:52.428 W/H264Encoder(17166): 	at com.von.cameraapp.camera.CameraController.$r8$lambda$ueNBsdzSGF_x1aU7bDA-UDD_Kf0(Unknown Source:0)
+09-22 16:29:52.428 W/H264Encoder(17166): 	at com.von.cameraapp.camera.CameraController$$ExternalSyntheticLambda0.onImageAvailable(D8$$SyntheticClass:0)
+09-22 16:29:52.428 W/H264Encoder(17166): 	at android.media.ImageReader$1.run(ImageReader.java:837)
+09-22 16:29:52.428 W/H264Encoder(17166): 	at android.os.Handler.handleCallback(Handler.java:966)
+09-22 16:29:52.428 W/H264Encoder(17166): 	at android.os.Handler.dispatchMessage(Handler.java:110)
+09-22 16:29:52.428 W/H264Encoder(17166): 	at android.os.Looper.loopOnce(Looper.java:205)
+09-22 16:29:52.428 W/H264Encoder(17166): 	at android.os.Looper.loop(Looper.java:293)
+09-22 16:29:52.428 W/H264Encoder(17166): 	at android.os.HandlerThread.run(HandlerThread.java:110)
+09-22 16:29:52.701 I/CameraStreamService(17166): camera opened: 720x1280 rotation=90
+09-22 16:29:53.800 I/CameraStreamService(17166): mqtt command: switch_camera {"action":"switch_camera","camera":"back"}
+09-22 16:29:55.904 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:30:00.907 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:30:25.966 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:30:51.096 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:30:56.101 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:31:01.104 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:31:06.107 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:31:26.178 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:31:31.181 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:31:36.183 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:31:41.186 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:32:01.256 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:32:06.259 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:32:11.262 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:32:16.265 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:32:41.348 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:32:46.351 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:32:51.355 W/MqttControl(17166): publish failed: 客户机未连接

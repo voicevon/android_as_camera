@@ -254,13 +254,11 @@ class RtspServer(private val port: Int, private val control: StreamControl) {
         private fun readLine(firstChar: Char? = null): String? {
             val sb = StringBuilder()
             if (firstChar != null) sb.append(firstChar)
-            var prev = -1
             while (true) {
                 val b = input.read()
                 if (b == -1) return null
                 if (b == '\n'.code) break
-                if (prev != '\r'.code) sb.append(b.toChar())
-                prev = b
+                if (b != '\r'.code) sb.append(b.toChar())
             }
             return sb.toString()
         }

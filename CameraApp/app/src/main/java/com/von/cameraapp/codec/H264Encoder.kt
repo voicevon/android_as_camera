@@ -53,6 +53,8 @@ class H264Encoder(
             setInteger(MediaFormat.KEY_BIT_RATE, bitrate)
             setInteger(MediaFormat.KEY_FRAME_RATE, fps)
             setInteger(MediaFormat.KEY_I_FRAME_INTERVAL, 2)
+            // 让每个 IDR 帧前携带 SPS/PPS，解码器中途加入即可出图（不支持的编码器会忽略）
+            setInteger("prepend-sps-pps-to-idr-frames", 1)
         }
         codec.configure(format, null, null, MediaCodec.CONFIGURE_FLAG_ENCODE)
     }
@@ -243,38 +245,79 @@ class H264Encoder(
             } catch (e: Exception) {
                 break
             }
-            if (index < 0) continue
-            val buf = codec.getOutputBuffer(index)
-            if (buf == null) {
-                codec.releaseOutputBuffer(index, false)
-                continue
-            }
-            if (info.size > 0) {
-                val data = ByteArray(info.size)
-                buf.position(info.offset)
-                buf.get(data)
-                if (info.flags and MediaCodec.BUFFER_FLAG_CODEC_CONFIG != 0) {
-                    parseSpsPps(data)
-                } else {
-                    val isKey = info.flags and MediaCodec.BUFFER_FLAG_KEY_FRAME != 0
-                    listener.onFrame(data, isKey, info.presentationTimeUs)
+            when {
+                // 部分编码器（如三星）仅在输出格式变化时给出 csd-0/csd-1，不走 CODEC_CONFIG 缓冲
+                index == MediaCodec.INFO_OUTPUT_FORMAT_CHANGED -> collectCsdFromFormat()
+                index < 0 -> {} // INFO_TRY_AGAIN_LATER
+                else -> {
+                    val buf = codec.getOutputBuffer(index)
+                    if (buf == null) {
+                        codec.releaseOutputBuffer(index, false)
+                        continue
+                    }
+                    if (info.size > 0) {
+                        val data = ByteArray(info.size)
+                        buf.position(info.offset)
+                        buf.get(data)
+                        if (info.flags and MediaCodec.BUFFER_FLAG_CODEC_CONFIG != 0) {
+                            // 部分编码器（如三星）SPS/PPS 可能分多个缓冲输出
+                            collectSpsPps(data)
+                        } else {
+                            val isKey = info.flags and MediaCodec.BUFFER_FLAG_KEY_FRAME != 0
+                            // 部分编码器把 SPS/PPS 内嵌在 IDR 帧前，从这里补齐
+                            if (isKey) collectSpsPps(data)
+                            listener.onFrame(data, isKey, info.presentationTimeUs)
+                        }
+                    }
+                    codec.releaseOutputBuffer(index, false)
                 }
             }
-            codec.releaseOutputBuffer(index, false)
         }
     }
 
-    private fun parseSpsPps(data: ByteArray) {
-        var s: ByteArray? = null
-        var p: ByteArray? = null
+    /** 从输出格式元数据提取 csd-0/csd-1（SPS/PPS） */
+    private fun collectCsdFromFormat() {
+        try {
+            val fmt = codec.outputFormat
+            for (key in listOf("csd-0", "csd-1")) {
+                val bb = fmt.getByteBuffer(key) ?: continue
+                val data = ByteArray(bb.remaining())
+                bb.get(data)
+                collectSpsPps(data)
+            }
+        } catch (e: Exception) {
+            Log.w(TAG, "collectCsdFromFormat: ${e.message}")
+        }
+    }
+
+    /** 跨缓冲累积 SPS/PPS，两者齐备时回调一次并清空 */
+    private fun collectSpsPps(data: ByteArray) {
         for (nal in splitNals(data)) {
-            when (nal[0].toInt() and 0x1F) {
-                7 -> s = nal
-                8 -> p = nal
+            // splitNals 返回的 NAL 保留起始码（3/4 字节），类型字节在起始码之后
+            val hdr = when {
+                nal.size > 4 && nal[0].toInt() == 0 && nal[1].toInt() == 0 &&
+                    nal[2].toInt() == 0 && nal[3].toInt() == 1 -> 4
+                nal.size > 3 && nal[0].toInt() == 0 && nal[1].toInt() == 0 &&
+                    nal[2].toInt() == 1 -> 3
+                else -> 0
+            }
+            if (hdr == 0 || nal.size <= hdr) continue
+            when (nal[hdr].toInt() and 0x1F) {
+                7 -> pendingSps = nal
+                8 -> pendingPps = nal
             }
         }
-        if (s != null && p != null) listener.onSpsPps(s, p)
+        val s = pendingSps
+        val p = pendingPps
+        if (s != null && p != null) {
+            listener.onSpsPps(s, p)
+            pendingSps = null
+            pendingPps = null
+        }
     }
+
+    private var pendingSps: ByteArray? = null
+    private var pendingPps: ByteArray? = null
 
     companion object {
         private const val TAG = "H264Encoder"

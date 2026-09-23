@@ -1,0 +1,17 @@
+--------- beginning of main
+09-22 16:23:05.047 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:23:10.700 I/CameraStreamService(17166): mqtt command: stop_stream {"action":"stop_stream"}
+09-22 16:23:10.702 I/CameraStreamService(17166): stream stopped
+09-22 16:23:15.131 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:23:20.149 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:23:21.017 I/CameraStreamService(17166): mqtt command: start_stream {"action":"start_stream"}
+09-22 16:23:21.040 I/RtspServer(17166): RTSP server listening on 8554
+09-22 16:23:21.311 I/CameraStreamService(17166): camera opened: 720x1280 rotation=270
+09-22 16:23:25.226 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:23:42.705 I/CameraStreamService(17166): camera opened: 720x1280 rotation=270
+09-22 16:23:50.362 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:23:55.365 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:24:00.370 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:24:05.373 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:24:10.377 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:24:30.402 W/MqttControl(17166): publish failed: 客户机未连接

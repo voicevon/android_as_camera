@@ -1,0 +1,63 @@
+--------- beginning of main
+09-22 15:44:04.598 I/CameraStreamService(23230): stream stopped
+09-22 15:44:04.605 I/RtspServer(23230): RTSP server listening on 8554
+09-22 15:44:04.633 I/CameraStreamService(23230): network settings applied
+09-22 15:44:04.828 I/CameraStreamService(23230): camera opened: 720x1280 rotation=270
+09-22 15:44:04.850 I/MqttControl(23230): mqtt connected: tcp://voicevon.vicp.io:1883
+09-22 15:45:48.754 I/CameraStreamService(23230): stream stopped
+09-22 15:45:48.774 I/RtspServer(23230): RTSP server listening on 8555
+09-22 15:45:48.794 I/CameraStreamService(23230): network settings applied
+09-22 15:45:48.922 I/MqttControl(23230): mqtt connected: tcp://voicevon.vicp.io:1883
+09-22 15:46:55.979 I/CameraStreamService(23230): mqtt command: start_stream {"action":"start_stream"}
+09-22 15:46:56.297 I/CameraStreamService(23230): camera opened: 720x1280 rotation=270
+09-22 15:47:00.791 I/CameraStreamService(23230): mqtt command: stop_stream {"action":"stop_stream"}
+09-22 15:47:00.806 W/H264Encoder(23230): offerFrame
+09-22 15:47:00.806 W/H264Encoder(23230): java.lang.IllegalStateException: buffer is inaccessible
+09-22 15:47:00.806 W/H264Encoder(23230): 	at java.nio.DirectByteBuffer.get(DirectByteBuffer.java:222)
+09-22 15:47:00.806 W/H264Encoder(23230): 	at com.von.cameraapp.codec.H264Encoder.convert(H264Encoder.kt:220)
+09-22 15:47:00.806 W/H264Encoder(23230): 	at com.von.cameraapp.codec.H264Encoder.offerFrame(H264Encoder.kt:120)
+09-22 15:47:00.806 W/H264Encoder(23230): 	at com.von.cameraapp.service.CameraStreamService.dispatchFrame(CameraStreamService.kt:342)
+09-22 15:47:00.806 W/H264Encoder(23230): 	at com.von.cameraapp.service.CameraStreamService.access$dispatchFrame(CameraStreamService.kt:40)
+09-22 15:47:00.806 W/H264Encoder(23230): 	at com.von.cameraapp.service.CameraStreamService$frameListener$1.onFrame(CameraStreamService.kt:288)
+09-22 15:47:00.806 W/H264Encoder(23230): 	at com.von.cameraapp.camera.CameraController.createSession$lambda$1(CameraController.kt:117)
+09-22 15:47:00.806 W/H264Encoder(23230): 	at com.von.cameraapp.camera.CameraController.$r8$lambda$ueNBsdzSGF_x1aU7bDA-UDD_Kf0(Unknown Source:0)
+09-22 15:47:00.806 W/H264Encoder(23230): 	at com.von.cameraapp.camera.CameraController$$ExternalSyntheticLambda0.onImageAvailable(D8$$SyntheticClass:0)
+09-22 15:47:00.806 W/H264Encoder(23230): 	at android.media.ImageReader$1.run(ImageReader.java:837)
+09-22 15:47:00.806 W/H264Encoder(23230): 	at android.os.Handler.handleCallback(Handler.java:966)
+09-22 15:47:00.806 W/H264Encoder(23230): 	at android.os.Handler.dispatchMessage(Handler.java:110)
+09-22 15:47:00.806 W/H264Encoder(23230): 	at android.os.Looper.loopOnce(Looper.java:205)
+09-22 15:47:00.806 W/H264Encoder(23230): 	at android.os.Looper.loop(Looper.java:293)
+09-22 15:47:00.806 W/H264Encoder(23230): 	at android.os.HandlerThread.run(HandlerThread.java:110)
+09-22 15:47:00.806 W/CameraController(23230): onFrame
+09-22 15:47:00.806 W/CameraController(23230): java.lang.IllegalStateException: Image is already closed
+09-22 15:47:00.806 W/CameraController(23230): 	at android.media.Image.throwISEIfImageIsInvalid(Image.java:73)
+09-22 15:47:00.806 W/CameraController(23230): 	at android.media.ImageReader$SurfaceImage.getFormat(ImageReader.java:913)
+09-22 15:47:00.806 W/CameraController(23230): 	at com.von.cameraapp.motion.MotionDetector.process(MotionDetector.kt:25)
+09-22 15:47:00.806 W/CameraController(23230): 	at com.von.cameraapp.service.CameraStreamService.dispatchFrame(CameraStreamService.kt:344)
+09-22 15:47:00.806 W/CameraController(23230): 	at com.von.cameraapp.service.CameraStreamService.access$dispatchFrame(CameraStreamService.kt:40)
+09-22 15:47:00.806 W/CameraController(23230): 	at com.von.cameraapp.service.CameraStreamService$frameListener$1.onFrame(CameraStreamService.kt:288)
+09-22 15:47:00.806 W/CameraController(23230): 	at com.von.cameraapp.camera.CameraController.createSession$lambda$1(CameraController.kt:117)
+09-22 15:47:00.806 W/CameraController(23230): 	at com.von.cameraapp.camera.CameraController.$r8$lambda$ueNBsdzSGF_x1aU7bDA-UDD_Kf0(Unknown Source:0)
+09-22 15:47:00.806 W/CameraController(23230): 	at com.von.cameraapp.camera.CameraController$$ExternalSyntheticLambda0.onImageAvailable(D8$$SyntheticClass:0)
+09-22 15:47:00.806 W/CameraController(23230): 	at android.media.ImageReader$1.run(ImageReader.java:837)
+09-22 15:47:00.806 W/CameraController(23230): 	at android.os.Handler.handleCallback(Handler.java:966)
+09-22 15:47:00.806 W/CameraController(23230): 	at android.os.Handler.dispatchMessage(Handler.java:110)
+09-22 15:47:00.806 W/CameraController(23230): 	at android.os.Looper.loopOnce(Looper.java:205)
+09-22 15:47:00.806 W/CameraController(23230): 	at android.os.Looper.loop(Looper.java:293)
+09-22 15:47:00.806 W/CameraController(23230): 	at android.os.HandlerThread.run(HandlerThread.java:110)
+09-22 15:47:00.976 I/CameraStreamService(23230): stream stopped
+09-22 15:47:02.946 I/CameraStreamService(23230): mqtt command: start_stream {"action":"start_stream"}
+09-22 15:47:03.099 I/CameraStreamService(23230): camera opened: 720x1280 rotation=270
+09-22 15:47:10.929 I/CameraStreamService(23230): mqtt command: stop_stream {"action":"stop_stream"}
+09-22 15:47:11.075 I/CameraStreamService(23230): stream stopped
+09-22 15:47:12.877 I/CameraStreamService(23230): mqtt command: switch_camera {"action":"switch_camera","camera":"front"}
+09-22 15:47:15.333 I/CameraStreamService(23230): mqtt command: switch_camera {"action":"switch_camera","camera":"back"}
+09-22 15:47:55.252 I/CameraStreamService( 6977): service created, deviceId=07d2004b8e943543
+09-22 15:47:56.326 I/MqttControl( 6977): mqtt connected: tcp://voicevon.vicp.io:1883
+09-22 15:48:13.666 I/RtspServer( 6977): RTSP server listening on 8555
+09-22 15:48:13.920 I/CameraStreamService( 6977): camera opened: 720x1280 rotation=270
+09-22 15:48:28.299 I/CameraStreamService( 6977): stream stopped
+09-22 15:48:28.308 I/RtspServer( 6977): RTSP server listening on 8554
+09-22 15:48:28.345 I/CameraStreamService( 6977): network settings applied
+09-22 15:48:28.463 I/MqttControl( 6977): mqtt connected: tcp://voicevon.vicp.io:1883
+09-22 15:48:29.306 I/CameraStreamService( 6977): camera opened: 720x1280 rotation=270

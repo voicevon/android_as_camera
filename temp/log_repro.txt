@@ -1,0 +1,139 @@
+--------- beginning of crash
+09-22 15:59:38.013 E/AndroidRuntime( 6978): FATAL EXCEPTION: camera-thread
+09-22 15:59:38.013 E/AndroidRuntime( 6978): Process: com.von.cameraapp, PID: 6978
+09-22 15:59:38.013 E/AndroidRuntime( 6978): android.view.ViewRootImpl$CalledFromWrongThreadException: Only the original thread that created a view hierarchy can touch its views.
+09-22 15:59:38.013 E/AndroidRuntime( 6978): 	at android.view.ViewRootImpl.checkThread(ViewRootImpl.java:12340)
+09-22 15:59:38.013 E/AndroidRuntime( 6978): 	at android.view.ViewRootImpl.focusableViewAvailable(ViewRootImpl.java:6735)
+09-22 15:59:38.013 E/AndroidRuntime( 6978): 	at android.view.ViewGroup.focusableViewAvailable(ViewGroup.java:1026)
+09-22 15:59:38.013 E/AndroidRuntime( 6978): 	at android.view.ViewGroup.focusableViewAvailable(ViewGroup.java:1026)
+09-22 15:59:38.013 E/AndroidRuntime( 6978): 	at android.view.ViewGroup.focusableViewAvailable(ViewGroup.java:1026)
+09-22 15:59:38.013 E/AndroidRuntime( 6978): 	at android.view.ViewGroup.focusableViewAvailable(ViewGroup.java:1026)
+09-22 15:59:38.013 E/AndroidRuntime( 6978): 	at android.view.View.setFlags(View.java:17110)
+09-22 15:59:38.013 E/AndroidRuntime( 6978): 	at android.view.View.setVisibility(View.java:12301)
+09-22 15:59:38.013 E/AndroidRuntime( 6978): 	at com.von.cameraapp.MainActivity.render(MainActivity.kt:150)
+09-22 15:59:38.013 E/AndroidRuntime( 6978): 	at com.von.cameraapp.MainActivity.onCreate$lambda$1(MainActivity.kt:91)
+09-22 15:59:38.013 E/AndroidRuntime( 6978): 	at com.von.cameraapp.MainActivity.$r8$lambda$ppte94RrrLzSfUfzR07b2CQ8D-8(Unknown Source:0)
+09-22 15:59:38.013 E/AndroidRuntime( 6978): 	at com.von.cameraapp.MainActivity$$ExternalSyntheticLambda3.invoke(D8$$SyntheticClass:0)
+09-22 15:59:38.013 E/AndroidRuntime( 6978): 	at com.von.cameraapp.ui.CameraViewModel.onState(CameraViewModel.kt:17)
+09-22 15:59:38.013 E/AndroidRuntime( 6978): 	at com.von.cameraapp.MainActivity$connection$1.onServiceConnected$lambda$0(MainActivity.kt:51)
+09-22 15:59:38.013 E/AndroidRuntime( 6978): 	at com.von.cameraapp.MainActivity$connection$1.$r8$lambda$iNMRBO0WJdTuVwnG2cjiXSruEds(Unknown Source:0)
+09-22 15:59:38.013 E/AndroidRuntime( 6978): 	at com.von.cameraapp.MainActivity$connection$1$$ExternalSyntheticLambda0.onUiState(D8$$SyntheticClass:0)
+09-22 15:59:38.013 E/AndroidRuntime( 6978): 	at com.von.cameraapp.service.CameraStreamService.postMessage(CameraStreamService.kt:383)
+09-22 15:59:38.013 E/AndroidRuntime( 6978): 	at com.von.cameraapp.service.CameraStreamService.access$postMessage(CameraStreamService.kt:40)
+09-22 15:59:38.013 E/AndroidRuntime( 6978): 	at com.von.cameraapp.service.CameraStreamService$frameListener$1.onError(CameraStreamService.kt:299)
+09-22 15:59:38.013 E/AndroidRuntime( 6978): 	at com.von.cameraapp.camera.CameraController$createSession$2.onConfigured(CameraController.kt:146)
+09-22 15:59:38.013 E/AndroidRuntime( 6978): 	at android.hardware.camera2.impl.CallbackProxies$SessionStateCallbackProxy.lambda$onConfigured$0$CallbackProxies$SessionStateCallbackProxy(CallbackProxies.java:53)
+09-22 15:59:38.013 E/AndroidRuntime( 6978): 	at android.hardware.camera2.impl.CallbackProxies$SessionStateCallbackProxy$$ExternalSyntheticLambda4.run(Unknown Source:4)
+09-22 15:59:38.013 E/AndroidRuntime( 6978): 	at android.os.Handler.handleCallback(Handler.java:966)
+09-22 15:59:38.013 E/AndroidRuntime( 6978): 	at android.os.Handler.dispatchMessage(Handler.java:110)
+09-22 15:59:38.013 E/AndroidRuntime( 6978): 	at android.os.Looper.loopOnce(Looper.java:205)
+09-22 15:59:38.013 E/AndroidRuntime( 6978): 	at android.os.Looper.loop(Looper.java:293)
+09-22 15:59:38.013 E/AndroidRuntime( 6978): 	at android.os.HandlerThread.run(HandlerThread.java:110)
+09-22 15:59:57.230 E/AndroidRuntime(25447): FATAL EXCEPTION: camera-thread
+09-22 15:59:57.230 E/AndroidRuntime(25447): Process: com.von.cameraapp, PID: 25447
+09-22 15:59:57.230 E/AndroidRuntime(25447): android.view.ViewRootImpl$CalledFromWrongThreadException: Only the original thread that created a view hierarchy can touch its views.
+09-22 15:59:57.230 E/AndroidRuntime(25447): 	at android.view.ViewRootImpl.checkThread(ViewRootImpl.java:12340)
+09-22 15:59:57.230 E/AndroidRuntime(25447): 	at android.view.ViewRootImpl.focusableViewAvailable(ViewRootImpl.java:6735)
+09-22 15:59:57.230 E/AndroidRuntime(25447): 	at android.view.ViewGroup.focusableViewAvailable(ViewGroup.java:1026)
+09-22 15:59:57.230 E/AndroidRuntime(25447): 	at android.view.ViewGroup.focusableViewAvailable(ViewGroup.java:1026)
+09-22 15:59:57.230 E/AndroidRuntime(25447): 	at android.view.ViewGroup.focusableViewAvailable(ViewGroup.java:1026)
+09-22 15:59:57.230 E/AndroidRuntime(25447): 	at android.view.ViewGroup.focusableViewAvailable(ViewGroup.java:1026)
+09-22 15:59:57.230 E/AndroidRuntime(25447): 	at android.view.View.setFlags(View.java:17110)
+09-22 15:59:57.230 E/AndroidRuntime(25447): 	at android.view.View.setVisibility(View.java:12301)
+09-22 15:59:57.230 E/AndroidRuntime(25447): 	at com.von.cameraapp.MainActivity.render(MainActivity.kt:150)
+09-22 15:59:57.230 E/AndroidRuntime(25447): 	at com.von.cameraapp.MainActivity.onCreate$lambda$1(MainActivity.kt:91)
+09-22 15:59:57.230 E/AndroidRuntime(25447): 	at com.von.cameraapp.MainActivity.$r8$lambda$ppte94RrrLzSfUfzR07b2CQ8D-8(Unknown Source:0)
+09-22 15:59:57.230 E/AndroidRuntime(25447): 	at com.von.cameraapp.MainActivity$$ExternalSyntheticLambda3.invoke(D8$$SyntheticClass:0)
+09-22 15:59:57.230 E/AndroidRuntime(25447): 	at com.von.cameraapp.ui.CameraViewModel.onState(CameraViewModel.kt:17)
+09-22 15:59:57.230 E/AndroidRuntime(25447): 	at com.von.cameraapp.MainActivity$connection$1.onServiceConnected$lambda$0(MainActivity.kt:51)
+09-22 15:59:57.230 E/AndroidRuntime(25447): 	at com.von.cameraapp.MainActivity$connection$1.$r8$lambda$iNMRBO0WJdTuVwnG2cjiXSruEds(Unknown Source:0)
+09-22 15:59:57.230 E/AndroidRuntime(25447): 	at com.von.cameraapp.MainActivity$connection$1$$ExternalSyntheticLambda0.onUiState(D8$$SyntheticClass:0)
+09-22 15:59:57.230 E/AndroidRuntime(25447): 	at com.von.cameraapp.service.CameraStreamService.postMessage(CameraStreamService.kt:383)
+09-22 15:59:57.230 E/AndroidRuntime(25447): 	at com.von.cameraapp.service.CameraStreamService.access$postMessage(CameraStreamService.kt:40)
+09-22 15:59:57.230 E/AndroidRuntime(25447): 	at com.von.cameraapp.service.CameraStreamService$frameListener$1.onError(CameraStreamService.kt:299)
+09-22 15:59:57.230 E/AndroidRuntime(25447): 	at com.von.cameraapp.camera.CameraController$createSession$2.onConfigured(CameraController.kt:146)
+09-22 15:59:57.230 E/AndroidRuntime(25447): 	at android.hardware.camera2.impl.CallbackProxies$SessionStateCallbackProxy.lambda$onConfigured$0$CallbackProxies$SessionStateCallbackProxy(CallbackProxies.java:53)
+09-22 15:59:57.230 E/AndroidRuntime(25447): 	at android.hardware.camera2.impl.CallbackProxies$SessionStateCallbackProxy$$ExternalSyntheticLambda4.run(Unknown Source:4)
+09-22 15:59:57.230 E/AndroidRuntime(25447): 	at android.os.Handler.handleCallback(Handler.java:966)
+09-22 15:59:57.230 E/AndroidRuntime(25447): 	at android.os.Handler.dispatchMessage(Handler.java:110)
+09-22 15:59:57.230 E/AndroidRuntime(25447): 	at android.os.Looper.loopOnce(Looper.java:205)
+09-22 15:59:57.230 E/AndroidRuntime(25447): 	at android.os.Looper.loop(Looper.java:293)
+09-22 15:59:57.230 E/AndroidRuntime(25447): 	at android.os.HandlerThread.run(HandlerThread.java:110)
+--------- beginning of main
+09-22 16:13:13.362 I/CameraStreamService(17164): mqtt command: stop_stream {"action":"stop_stream"}
+09-22 16:13:13.382 W/H264Encoder(17164): offerFrame
+09-22 16:13:13.382 W/H264Encoder(17164): java.lang.IllegalStateException: buffer is inaccessible
+09-22 16:13:13.382 W/H264Encoder(17164): 	at java.nio.DirectByteBuffer.get(DirectByteBuffer.java:222)
+09-22 16:13:13.382 W/H264Encoder(17164): 	at com.von.cameraapp.codec.H264Encoder.convert(H264Encoder.kt:220)
+09-22 16:13:13.382 W/H264Encoder(17164): 	at com.von.cameraapp.codec.H264Encoder.offerFrame(H264Encoder.kt:120)
+09-22 16:13:13.382 W/H264Encoder(17164): 	at com.von.cameraapp.service.CameraStreamService.dispatchFrame(CameraStreamService.kt:350)
+09-22 16:13:13.382 W/H264Encoder(17164): 	at com.von.cameraapp.service.CameraStreamService.access$dispatchFrame(CameraStreamService.kt:40)
+09-22 16:13:13.382 W/H264Encoder(17164): 	at com.von.cameraapp.service.CameraStreamService$frameListener$1.onFrame(CameraStreamService.kt:289)
+09-22 16:13:13.382 W/H264Encoder(17164): 	at com.von.cameraapp.camera.CameraController.createSession$lambda$1(CameraController.kt:117)
+09-22 16:13:13.382 W/H264Encoder(17164): 	at com.von.cameraapp.camera.CameraController.$r8$lambda$ueNBsdzSGF_x1aU7bDA-UDD_Kf0(Unknown Source:0)
+09-22 16:13:13.382 W/H264Encoder(17164): 	at com.von.cameraapp.camera.CameraController$$ExternalSyntheticLambda0.onImageAvailable(D8$$SyntheticClass:0)
+09-22 16:13:13.382 W/H264Encoder(17164): 	at android.media.ImageReader$1.run(ImageReader.java:837)
+09-22 16:13:13.382 W/H264Encoder(17164): 	at android.os.Handler.handleCallback(Handler.java:966)
+09-22 16:13:13.382 W/H264Encoder(17164): 	at android.os.Handler.dispatchMessage(Handler.java:110)
+09-22 16:13:13.382 W/H264Encoder(17164): 	at android.os.Looper.loopOnce(Looper.java:205)
+09-22 16:13:13.382 W/H264Encoder(17164): 	at android.os.Looper.loop(Looper.java:293)
+09-22 16:13:13.382 W/H264Encoder(17164): 	at android.os.HandlerThread.run(HandlerThread.java:110)
+09-22 16:13:13.544 I/CameraStreamService(17164): stream stopped
+09-22 16:13:22.349 I/CameraStreamService(17164): mqtt command: start_stream {"action":"start_stream"}
+09-22 16:13:22.462 I/CameraStreamService(17164): camera opened: 720x1280 rotation=270
+09-22 16:16:37.782 I/CameraStreamService(17165): service created, deviceId=07d2004b8e943543
+09-22 16:16:37.795 I/CameraStreamService(17165): service destroyed
+09-22 16:16:38.047 W/MqttControl(17165): mqtt connect failed: MqttException
+09-22 16:17:07.375 I/CameraStreamService(17165): mqtt command: stop_stream {"action":"stop_stream"}
+09-22 16:17:07.377 I/CameraStreamService(17165): stream stopped
+09-22 16:17:16.573 I/CameraStreamService(17165): mqtt command: start_stream {"action":"start_stream"}
+09-22 16:17:16.596 I/RtspServer(17165): RTSP server listening on 8554
+09-22 16:21:08.114 I/CameraStreamService(17166): service created, deviceId=07d2004b8e943543
+09-22 16:21:08.130 I/CameraStreamService(17166): service destroyed
+09-22 16:21:08.264 W/MqttControl(17166): mqtt connect failed: MqttException
+09-22 16:21:29.394 I/CameraStreamService(17166): service created, deviceId=07d2004b8e943543
+09-22 16:21:29.411 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:21:29.734 I/MqttControl(17166): mqtt connected: tcp://voicevon.vicp.io:1883
+09-22 16:21:34.428 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:21:39.446 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:21:59.605 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:22:04.646 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:22:09.666 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:22:19.743 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:22:24.781 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:22:29.822 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:22:54.998 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:23:00.023 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:23:05.047 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:23:10.700 I/CameraStreamService(17166): mqtt command: stop_stream {"action":"stop_stream"}
+09-22 16:23:10.702 I/CameraStreamService(17166): stream stopped
+09-22 16:23:15.131 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:23:20.149 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:23:21.017 I/CameraStreamService(17166): mqtt command: start_stream {"action":"start_stream"}
+09-22 16:23:21.040 I/RtspServer(17166): RTSP server listening on 8554
+09-22 16:23:21.311 I/CameraStreamService(17166): camera opened: 720x1280 rotation=270
+09-22 16:23:25.226 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:23:42.045 W/H264Encoder(17166): offerFrame
+09-22 16:23:42.045 W/H264Encoder(17166): java.lang.IllegalStateException
+09-22 16:23:42.045 W/H264Encoder(17166): 	at android.media.MediaCodec.getBuffer(Native Method)
+09-22 16:23:42.045 W/H264Encoder(17166): 	at android.media.MediaCodec.getInputBuffer(MediaCodec.java:4001)
+09-22 16:23:42.045 W/H264Encoder(17166): 	at com.von.cameraapp.codec.H264Encoder.offerFrame(H264Encoder.kt:121)
+09-22 16:23:42.045 W/H264Encoder(17166): 	at com.von.cameraapp.service.CameraStreamService.dispatchFrame(CameraStreamService.kt:374)
+09-22 16:23:42.045 W/H264Encoder(17166): 	at com.von.cameraapp.service.CameraStreamService.access$dispatchFrame(CameraStreamService.kt:41)
+09-22 16:23:42.045 W/H264Encoder(17166): 	at com.von.cameraapp.service.CameraStreamService$frameListener$1.onFrame(CameraStreamService.kt:311)
+09-22 16:23:42.045 W/H264Encoder(17166): 	at com.von.cameraapp.camera.CameraController.createSession$lambda$1(CameraController.kt:119)
+09-22 16:23:42.045 W/H264Encoder(17166): 	at com.von.cameraapp.camera.CameraController.$r8$lambda$ueNBsdzSGF_x1aU7bDA-UDD_Kf0(Unknown Source:0)
+09-22 16:23:42.045 W/H264Encoder(17166): 	at com.von.cameraapp.camera.CameraController$$ExternalSyntheticLambda0.onImageAvailable(D8$$SyntheticClass:0)
+09-22 16:23:42.045 W/H264Encoder(17166): 	at android.media.ImageReader$1.run(ImageReader.java:837)
+09-22 16:23:42.045 W/H264Encoder(17166): 	at android.os.Handler.handleCallback(Handler.java:966)
+09-22 16:23:42.045 W/H264Encoder(17166): 	at android.os.Handler.dispatchMessage(Handler.java:110)
+09-22 16:23:42.045 W/H264Encoder(17166): 	at android.os.Looper.loopOnce(Looper.java:205)
+09-22 16:23:42.045 W/H264Encoder(17166): 	at android.os.Looper.loop(Looper.java:293)
+09-22 16:23:42.045 W/H264Encoder(17166): 	at android.os.HandlerThread.run(HandlerThread.java:110)
+09-22 16:23:42.705 I/CameraStreamService(17166): camera opened: 720x1280 rotation=270
+09-22 16:23:50.362 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:23:55.365 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:24:00.370 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:24:05.373 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:24:10.377 W/MqttControl(17166): publish failed: 客户机未连接
+09-22 16:24:30.402 W/MqttControl(17166): publish failed: 客户机未连接
